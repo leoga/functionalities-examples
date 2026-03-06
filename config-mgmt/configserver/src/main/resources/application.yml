@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: configserver
+#  profiles:
+#    active: native
+#  profiles:
+#    active: jdbc
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/configdb
+#    username: ${MYSQL_USER}
+#    password: ${MYSQL_PASSWORD}
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    config:
+#      server:
+#        jdbc:
+#          sql: "SELECT PROP_KEY, PROP_VALUE FROM PROPERTIES WHERE APPLICATION =? AND PROFILE=? AND LABEL=?"
+#          default-label: main
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: file:///C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\src\main\resources\config
+# actuator/busrefresh does not work with classpath location
+#          search-locations: classpath:/config
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/leoga/app-configuration
+          username: ${GIT_USER}
+          password: ${GIT_TOKEN}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+server:
+  port: 8888
+
+#encrypt:
+#  key: "0E329232EA6D0D73"
+
+encrypt:
+  key-store:
+    location: config-server.jks
+    password: mypass
+    alias: config-server-key
