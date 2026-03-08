@@ -3,20 +3,30 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for config-demo" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="configserver" />
+      </profile>
+      <profile name="Annotation profile for provider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath>
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="provider" />
+        <module name="configdemo" />
+      </profile>
+      <profile name="Annotation profile for consumer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
-        <module name="configdemo" />
-      </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="configserver" />
+        <module name="consumer" />
       </profile>
     </annotationProcessing>
   </component>
@@ -24,6 +34,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configdemo" options="-parameters" />
       <module name="configserver" options="-parameters" />
+      <module name="consumer" options="-parameters" />
+      <module name="provider" options="-parameters" />
     </option>
   </component>
 </project>
