@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/config-mgmt/configserver/pom.xml" />
         <option value="$PROJECT_DIR$/interservice/consumer/pom.xml" />
         <option value="$PROJECT_DIR$/interservice/provider/pom.xml" />
+        <option value="$PROJECT_DIR$/interservice/eureka/pom.xml" />
       </list>
     </option>
   </component>

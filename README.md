@@ -18,3 +18,5 @@ To test different ways of interservice communication:
 - Using RestClient
 - Using WebClient
 - Implementing them with HttpInterface proxy.
+
+Eureka service registry features has been added.

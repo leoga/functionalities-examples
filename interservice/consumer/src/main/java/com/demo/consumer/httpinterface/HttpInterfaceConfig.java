@@ -1,29 +1,43 @@
 package com.demo.consumer.httpinterface;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.client.support.RestTemplateAdapter;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.support.WebClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
-import org.springframework.web.util.DefaultUriBuilderFactory;
 
 @Configuration
 public class HttpInterfaceConfig {
 
-//    @Bean
-//    public ProviderHttpInterface webClientHttpInterface() {
-//        WebClient webClient = WebClient.create("http://localhost:8081");
-//        WebClientAdapter adapter = WebClientAdapter.create(webClient);
-//
-//        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
-//
-//        ProviderHttpInterface service = factory.createClient(ProviderHttpInterface.class);
-//        return service;
-//    }
+    /**
+     *
+     * @param webClientBuilder bean already defined in webclient package
+     * @return service bean
+     */
+    @Bean
+    public ProviderHttpInterface webClientHttpInterface(WebClient.Builder webClientBuilder) {
+        WebClient webClient = webClientBuilder.baseUrl("http://provider").build();
+        WebClientAdapter adapter = WebClientAdapter.create(webClient);
 
+        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+
+        ProviderHttpInterface service = factory.createClient(ProviderHttpInterface.class);
+        return service;
+    }
+
+    /**
+     *
+     * @param restClientBuilder bean already defined in restclient package
+     * @return service bean
+     */
 //    @Bean
-//    public ProviderHttpInterface restClientHttpInterface() {
-//        RestClient restClient = RestClient.create("http://localhost:8081");
+//    public ProviderHttpInterface restClientHttpInterface(@Qualifier("loadBalanced") RestClient.Builder restClientBuilder) {
+//        RestClient restClient = restClientBuilder.baseUrl("http://provider").build();
 //        RestClientAdapter adapter = RestClientAdapter.create(restClient);
 //
 //        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
@@ -32,15 +46,19 @@ public class HttpInterfaceConfig {
 //        return service;
 //    }
 
-    @Bean
-    public ProviderHttpInterface restTemplateHttpInterface() {
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("http://localhost:8081"));
-        RestTemplateAdapter adapter = RestTemplateAdapter.create(restTemplate);
-
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
-
-        ProviderHttpInterface service = factory.createClient(ProviderHttpInterface.class);
-        return service;
-    }
+    /**
+     *
+     * @param restTemplate bean already defined in resttemplate package
+     * @return service bean
+     */
+//    @Bean
+//    public ProviderHttpInterface restTemplateHttpInterface(RestTemplate restTemplate) {
+//        restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("http://provider"));
+//        RestTemplateAdapter adapter = RestTemplateAdapter.create(restTemplate);
+//
+//        HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
+//
+//        ProviderHttpInterface service = factory.createClient(ProviderHttpInterface.class);
+//        return service;
+//    }
 }

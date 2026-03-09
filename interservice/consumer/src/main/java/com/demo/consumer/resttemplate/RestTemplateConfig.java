@@ -1,5 +1,6 @@
 package com.demo.consumer.resttemplate;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -12,6 +13,7 @@ public class RestTemplateConfig {
     only need to be made here and all uses of it in the application will inherit it.
      */
     @Bean
+    @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
