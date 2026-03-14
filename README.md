@@ -13,10 +13,13 @@ To test loading different configurations in Spring Boot, separating them by envi
 ## Project interservice
 
 To test different ways of interservice communication:
-- Using FeignClient (legacy)
-- Using RestTemplate (legacy)
-- Using RestClient
-- Using WebClient
+- Using FeignClient (legacy).
+- Using RestTemplate (legacy).
+- Using RestClient.
+- Using WebClient.
 - Implementing them with HttpInterface proxy.
 
 Eureka service registry features has been added.
+
+## Evaluate-loki
+- Log monitoring with Grafana, configured for the previous projects.
