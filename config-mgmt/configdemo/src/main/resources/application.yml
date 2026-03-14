@@ -4,7 +4,7 @@ spring:
   config:
     import: optional:configserver:http://localhost:8888
   profiles:
-    active: default
+    active: dev
 
 build:
   id: default

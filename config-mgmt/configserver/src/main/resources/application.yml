@@ -35,8 +35,8 @@ spring:
       server:
         git:
           uri: https://github.com/leoga/app-configuration
-          username: ${GIT_USER}
-          password: ${GIT_TOKEN}
+#          username: ${GIT_USER}
+#          password: ${GIT_TOKEN}
 
 management:
   endpoints:
@@ -56,3 +56,13 @@ encrypt:
     location: config-server.jks
     password: mypass
     alias: config-server-key
+
+logging:
+  level:
+    root: INFO #(TRACE, DEBUG, INFO, WARN, ERROR)
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      max-history: 7 # It stores them for 7 days
