@@ -22,4 +22,6 @@ To test different ways of interservice communication:
 Eureka service registry features has been added.
 
 ## Evaluate-loki
-- Log monitoring with Grafana, configured for the previous projects.
+- Log monitoring with Grafana, configured for the previous projects. ([Guide for setup Grafana with docker compose](https://grafana.com/docs/loki/latest/get-started/quick-start/quick-start/)
+## Evaluate-prometheus
+- Log monitoring (Loki) and Prometheus for metrics observability. ([Guide for setup Grafana with docker compose](https://grafana.com/docs/loki/latest/get-started/quick-start/quick-start/))

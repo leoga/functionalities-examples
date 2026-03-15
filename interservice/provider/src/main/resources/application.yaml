@@ -22,3 +22,9 @@ logging:
     rollingpolicy:
       max-file-size: 5MB
       max-history: 7 # It stores them for 7 days
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

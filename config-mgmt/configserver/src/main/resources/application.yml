@@ -44,7 +44,6 @@ management:
       exposure:
         include: "*"
 
-
 server:
   port: 8888
 

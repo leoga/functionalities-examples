@@ -1,262 +1,204 @@
-2026-03-14T12:39:57.216+01:00  INFO 31708 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 31708 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
-2026-03-14T12:39:57.219+01:00  INFO 31708 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-03-14T12:39:58.880+01:00  INFO 31708 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-03-14T12:39:58.890+01:00  INFO 31708 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-03-14T12:39:58.945+01:00  INFO 31708 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2baa8240-90c0-35f4-8465-b874f92b58b9
-2026-03-14T12:39:59.393+01:00  INFO 31708 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
-2026-03-14T12:39:59.409+01:00  INFO 31708 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-14T12:39:59.410+01:00  INFO 31708 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-03-14T12:39:59.583+01:00  INFO 31708 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2273 ms
-2026-03-14T12:40:00.860+01:00  INFO 31708 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
-2026-03-14T12:40:02.497+01:00  INFO 31708 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T12:40:03.848+01:00  INFO 31708 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T12:40:03.959+01:00  INFO 31708 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 22 endpoints beneath base path '/actuator'
-2026-03-14T12:40:04.115+01:00  INFO 31708 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
-2026-03-14T12:40:04.123+01:00  INFO 31708 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
-2026-03-14T12:40:04.128+01:00  INFO 31708 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
-2026-03-14T12:40:04.131+01:00  INFO 31708 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
-2026-03-14T12:40:04.147+01:00  INFO 31708 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T12:40:04.147+01:00  INFO 31708 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
-2026-03-14T12:40:04.148+01:00  INFO 31708 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-03-14T12:40:04.164+01:00  INFO 31708 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-03-14T12:40:04.164+01:00  INFO 31708 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-03-14T12:40:04.255+01:00  INFO 31708 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-03-14T12:40:04.269+01:00  INFO 31708 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.huHjW_0sTIuPI_oSrJaO5Q, bound to: springCloudBus
-2026-03-14T12:40:04.276+01:00  INFO 31708 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-03-14T12:40:04.376+01:00  INFO 31708 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#53564a4c:0/SimpleConnection@1443539 [delegate=amqp://guest@127.0.0.1:5672/, localPort=56977]
-2026-03-14T12:40:04.468+01:00  INFO 31708 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-9714933.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T12:40:04.470+01:00  INFO 31708 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-9714933.springCloudBusInput.errors' has 2 subscriber(s).
-2026-03-14T12:40:04.496+01:00  INFO 31708 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.huHjW_0sTIuPI_oSrJaO5Q'
-2026-03-14T12:40:04.524+01:00  INFO 31708 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
-2026-03-14T12:40:05.531+01:00  INFO 31708 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T12:40:06.541+01:00  INFO 31708 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T12:40:06.609+01:00  INFO 31708 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-9714933.springCloudBusInput.errors
-2026-03-14T12:40:06.645+01:00  INFO 31708 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 11.574 seconds (process running for 12.9)
-2026-03-14T12:40:06.865+01:00  INFO 31708 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-14T12:40:06.866+01:00  INFO 31708 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-14T12:40:06.869+01:00  INFO 31708 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-14T13:56:20.249+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusOutput' has 1 subscriber(s).
-2026-03-14T13:56:21.767+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-03-14T13:56:23.200+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory.publisher#34644746:0/SimpleConnection@450803d3 [delegate=amqp://guest@127.0.0.1:5672/, localPort=62967]
-2026-03-14T13:56:23.398+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (springCloudBus.anonymous.huHjW_0sTIuPI_oSrJaO5Q) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
-2026-03-14T13:56:24.472+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.bus.event.RefreshListener      : Received remote refresh request.
-2026-03-14T13:56:26.122+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T13:56:29.277+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.bus.event.RefreshListener      : Keys refreshed []
-2026-03-14T13:56:41.327+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-3] .c.s.e.MultipleJGitEnvironmentRepository : Fetched for remote main and found 1 updates
-2026-03-14T13:56:41.680+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:16:03.103+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-4] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusOutput' has 1 subscriber(s).
-2026-03-14T14:16:03.127+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-4] o.s.cloud.bus.event.RefreshListener      : Received remote refresh request.
-2026-03-14T14:16:03.993+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:16:04.185+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-4] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T14:16:04.885+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-4] o.s.cloud.bus.event.RefreshListener      : Keys refreshed []
-2026-03-14T14:17:32.778+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusOutput' has 1 subscriber(s).
-2026-03-14T14:17:32.882+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.bus.event.RefreshListener      : Received remote refresh request.
-2026-03-14T14:17:33.924+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T14:17:34.032+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-3] .c.s.e.MultipleJGitEnvironmentRepository : Fetched for remote main and found 1 updates
-2026-03-14T14:17:35.658+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:17:35.817+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.bus.event.RefreshListener      : Keys refreshed []
-2026-03-14T14:20:03.095+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-10] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:22:16.489+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-4] .c.s.e.MultipleJGitEnvironmentRepository : Fetched for remote main and found 1 updates
-2026-03-14T14:22:16.621+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:22:17.555+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo-dev.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:22:17.555+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:26:28.580+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusOutput' has 1 subscriber(s).
-2026-03-14T14:26:28.582+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.bus.event.RefreshListener      : Received remote refresh request.
-2026-03-14T14:26:29.571+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-3] .c.s.e.MultipleJGitEnvironmentRepository : Fetched for remote main and found 1 updates
-2026-03-14T14:26:29.631+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T14:26:29.716+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:26:29.894+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-1] o.s.cloud.bus.event.RefreshListener      : Keys refreshed []
-2026-03-14T14:26:30.564+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo-dev.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T14:26:30.564+01:00  INFO 31708 --- [configserver] [http-nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-14512846064993624798/'
-2026-03-14T16:11:45.202+01:00  WARN 31708 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-14512846064993624798\.git\objects\pack\pack-32e0ee1d249a4e2dcee811b57a830fd3f9596e18.idx
-2026-03-14T16:11:45.519+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-14T16:11:45.562+01:00  INFO 31708 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-03-14T16:11:45.583+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-03-14T16:11:45.861+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-03-14T16:11:45.862+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.huHjW_0sTIuPI_oSrJaO5Q'
-2026-03-14T16:11:45.888+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-9714933.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:11:45.907+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-9714933.springCloudBusInput.errors' has 0 subscriber(s).
-2026-03-14T16:11:46.160+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:11:46.160+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
-2026-03-14T16:11:46.164+01:00  INFO 31708 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:12:03.551+01:00  INFO 30152 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 30152 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
-2026-03-14T16:12:03.555+01:00  INFO 30152 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-03-14T16:12:05.721+01:00  INFO 30152 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-03-14T16:12:05.745+01:00  INFO 30152 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-03-14T16:12:05.829+01:00  INFO 30152 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2baa8240-90c0-35f4-8465-b874f92b58b9
-2026-03-14T16:12:06.329+01:00  INFO 30152 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
-2026-03-14T16:12:06.356+01:00  INFO 30152 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-14T16:12:06.356+01:00  INFO 30152 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-03-14T16:12:06.543+01:00  INFO 30152 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2913 ms
-2026-03-14T16:12:07.716+01:00  INFO 30152 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
-2026-03-14T16:12:09.248+01:00  INFO 30152 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:12:10.639+01:00  INFO 30152 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:12:10.725+01:00  INFO 30152 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 22 endpoints beneath base path '/actuator'
-2026-03-14T16:12:10.858+01:00  INFO 30152 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
-2026-03-14T16:12:10.864+01:00  INFO 30152 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
-2026-03-14T16:12:10.868+01:00  INFO 30152 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
-2026-03-14T16:12:10.870+01:00  INFO 30152 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
-2026-03-14T16:12:10.880+01:00  INFO 30152 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:12:10.880+01:00  INFO 30152 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
-2026-03-14T16:12:10.880+01:00  INFO 30152 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:12:10.893+01:00  INFO 30152 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-03-14T16:12:10.893+01:00  INFO 30152 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-03-14T16:12:10.965+01:00  INFO 30152 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-03-14T16:12:10.980+01:00  INFO 30152 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.RCQviDGpQqOzCCtIlvamTQ, bound to: springCloudBus
-2026-03-14T16:12:10.986+01:00  INFO 30152 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-03-14T16:12:11.072+01:00  INFO 30152 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#4866e0a7:0/SimpleConnection@5b160208 [delegate=amqp://guest@127.0.0.1:5672/, localPort=62946]
-2026-03-14T16:12:11.267+01:00  INFO 30152 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-690419645.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:12:11.268+01:00  INFO 30152 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-690419645.springCloudBusInput.errors' has 2 subscriber(s).
-2026-03-14T16:12:11.291+01:00  INFO 30152 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.RCQviDGpQqOzCCtIlvamTQ'
-2026-03-14T16:12:11.317+01:00  INFO 30152 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
-2026-03-14T16:12:12.322+01:00  INFO 30152 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:12:13.328+01:00  INFO 30152 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:12:13.363+01:00  INFO 30152 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-690419645.springCloudBusInput.errors
-2026-03-14T16:12:13.381+01:00  INFO 30152 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 11.939 seconds (process running for 13.714)
-2026-03-14T16:12:14.406+01:00  INFO 30152 --- [configserver] [RMI TCP Connection(5)-10.5.0.2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-14T16:12:14.406+01:00  INFO 30152 --- [configserver] [RMI TCP Connection(5)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-14T16:12:14.408+01:00  INFO 30152 --- [configserver] [RMI TCP Connection(5)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-03-14T16:17:06.596+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-14T16:17:06.606+01:00  WARN 30152 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-3287272480181311073\.git\objects\pack\pack-77ebf607b41a0dee1bcb95b3b820f54203b097db.idx
-2026-03-14T16:17:06.613+01:00  INFO 30152 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-03-14T16:17:06.631+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-03-14T16:17:07.531+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-03-14T16:17:07.532+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.RCQviDGpQqOzCCtIlvamTQ'
-2026-03-14T16:17:07.538+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-690419645.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:17:07.540+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-690419645.springCloudBusInput.errors' has 0 subscriber(s).
-2026-03-14T16:17:07.583+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:17:07.584+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
-2026-03-14T16:17:07.584+01:00  INFO 30152 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:17:25.372+01:00  INFO 11112 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 11112 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
-2026-03-14T16:17:25.376+01:00  INFO 11112 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-03-14T16:17:26.995+01:00  INFO 11112 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-03-14T16:17:27.005+01:00  INFO 11112 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-03-14T16:17:27.063+01:00  INFO 11112 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2baa8240-90c0-35f4-8465-b874f92b58b9
-2026-03-14T16:17:27.497+01:00  INFO 11112 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
-2026-03-14T16:17:27.528+01:00  INFO 11112 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-14T16:17:27.528+01:00  INFO 11112 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-03-14T16:17:27.731+01:00  INFO 11112 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2263 ms
-2026-03-14T16:17:28.904+01:00  INFO 11112 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
-2026-03-14T16:17:30.489+01:00  INFO 11112 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:17:31.889+01:00  INFO 11112 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:17:31.963+01:00  INFO 11112 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 22 endpoints beneath base path '/actuator'
-2026-03-14T16:17:32.100+01:00  INFO 11112 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
-2026-03-14T16:17:32.106+01:00  INFO 11112 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
-2026-03-14T16:17:32.110+01:00  INFO 11112 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
-2026-03-14T16:17:32.113+01:00  INFO 11112 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
-2026-03-14T16:17:32.123+01:00  INFO 11112 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:17:32.123+01:00  INFO 11112 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
-2026-03-14T16:17:32.124+01:00  INFO 11112 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:17:32.137+01:00  INFO 11112 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-03-14T16:17:32.137+01:00  INFO 11112 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-03-14T16:17:32.217+01:00  INFO 11112 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-03-14T16:17:32.238+01:00  INFO 11112 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.etXZubu8SNyVZKXhMB5wgA, bound to: springCloudBus
-2026-03-14T16:17:32.245+01:00  INFO 11112 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-03-14T16:17:32.342+01:00  INFO 11112 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#14ba7f15:0/SimpleConnection@59700156 [delegate=amqp://guest@127.0.0.1:5672/, localPort=63019]
-2026-03-14T16:17:33.270+01:00  INFO 11112 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1372802818.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:17:33.273+01:00  INFO 11112 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1372802818.springCloudBusInput.errors' has 2 subscriber(s).
-2026-03-14T16:17:33.323+01:00  INFO 11112 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.etXZubu8SNyVZKXhMB5wgA'
-2026-03-14T16:17:33.361+01:00  INFO 11112 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
-2026-03-14T16:17:34.370+01:00  INFO 11112 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:17:35.381+01:00  INFO 11112 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:17:35.437+01:00  INFO 11112 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-1372802818.springCloudBusInput.errors
-2026-03-14T16:17:35.469+01:00  INFO 11112 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 12.098 seconds (process running for 14.036)
-2026-03-14T16:17:35.940+01:00  INFO 11112 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-14T16:17:35.941+01:00  INFO 11112 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-14T16:17:35.944+01:00  INFO 11112 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-03-14T16:26:39.007+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-14T16:26:39.018+01:00  WARN 11112 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-1495683916953210773\.git\objects\pack\pack-77ebf607b41a0dee1bcb95b3b820f54203b097db.idx
-2026-03-14T16:26:39.026+01:00  INFO 11112 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-03-14T16:26:39.045+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-03-14T16:26:39.807+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-03-14T16:26:39.807+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.etXZubu8SNyVZKXhMB5wgA'
-2026-03-14T16:26:39.814+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1372802818.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:26:39.816+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1372802818.springCloudBusInput.errors' has 0 subscriber(s).
-2026-03-14T16:26:39.869+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:26:39.870+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
-2026-03-14T16:26:39.870+01:00  INFO 11112 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:26:47.505+01:00  INFO 22132 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 22132 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
-2026-03-14T16:26:47.508+01:00  INFO 22132 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-03-14T16:26:49.414+01:00  INFO 22132 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-03-14T16:26:49.425+01:00  INFO 22132 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-03-14T16:26:49.518+01:00  INFO 22132 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2baa8240-90c0-35f4-8465-b874f92b58b9
-2026-03-14T16:26:50.100+01:00  INFO 22132 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
-2026-03-14T16:26:50.134+01:00  INFO 22132 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-14T16:26:50.135+01:00  INFO 22132 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-03-14T16:26:50.398+01:00  INFO 22132 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2821 ms
-2026-03-14T16:26:52.079+01:00  INFO 22132 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
-2026-03-14T16:26:53.748+01:00  INFO 22132 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:26:55.169+01:00  INFO 22132 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:26:55.270+01:00  INFO 22132 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 22 endpoints beneath base path '/actuator'
-2026-03-14T16:26:55.472+01:00  INFO 22132 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
-2026-03-14T16:26:55.483+01:00  INFO 22132 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
-2026-03-14T16:26:55.491+01:00  INFO 22132 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
-2026-03-14T16:26:55.498+01:00  INFO 22132 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
-2026-03-14T16:26:55.511+01:00  INFO 22132 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:26:55.511+01:00  INFO 22132 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
-2026-03-14T16:26:55.512+01:00  INFO 22132 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:26:55.535+01:00  INFO 22132 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-03-14T16:26:55.535+01:00  INFO 22132 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-03-14T16:26:55.718+01:00  INFO 22132 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-03-14T16:26:55.744+01:00  INFO 22132 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.OiFnRLE8StCitbO_VTFoWg, bound to: springCloudBus
-2026-03-14T16:26:55.753+01:00  INFO 22132 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-03-14T16:26:55.910+01:00  INFO 22132 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#39420d59:0/SimpleConnection@522f74a1 [delegate=amqp://guest@127.0.0.1:5672/, localPort=63708]
-2026-03-14T16:26:56.049+01:00  INFO 22132 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1023063405.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:26:56.050+01:00  INFO 22132 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1023063405.springCloudBusInput.errors' has 2 subscriber(s).
-2026-03-14T16:26:56.112+01:00  INFO 22132 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.OiFnRLE8StCitbO_VTFoWg'
-2026-03-14T16:26:56.155+01:00  INFO 22132 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
-2026-03-14T16:26:57.164+01:00  INFO 22132 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:26:58.173+01:00  INFO 22132 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:26:58.220+01:00  INFO 22132 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-1023063405.springCloudBusInput.errors
-2026-03-14T16:26:58.248+01:00  INFO 22132 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 12.833 seconds (process running for 14.543)
-2026-03-14T16:26:58.671+01:00  INFO 22132 --- [configserver] [RMI TCP Connection(4)-10.5.0.2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-14T16:26:58.672+01:00  INFO 22132 --- [configserver] [RMI TCP Connection(4)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-14T16:26:58.673+01:00  INFO 22132 --- [configserver] [RMI TCP Connection(4)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-03-14T16:29:22.492+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-14T16:29:22.501+01:00  WARN 22132 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-8487280687928864015\.git\objects\pack\pack-77ebf607b41a0dee1bcb95b3b820f54203b097db.idx
-2026-03-14T16:29:22.515+01:00  INFO 22132 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-03-14T16:29:22.532+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-03-14T16:29:23.236+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-03-14T16:29:23.236+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.OiFnRLE8StCitbO_VTFoWg'
-2026-03-14T16:29:23.239+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1023063405.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:29:23.240+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1023063405.springCloudBusInput.errors' has 0 subscriber(s).
-2026-03-14T16:29:23.280+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:29:23.281+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
-2026-03-14T16:29:23.282+01:00  INFO 22132 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:29:42.365+01:00  INFO 12116 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 12116 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
-2026-03-14T16:29:42.366+01:00  INFO 12116 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-03-14T16:29:43.871+01:00  INFO 12116 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-03-14T16:29:43.881+01:00  INFO 12116 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-03-14T16:29:43.931+01:00  INFO 12116 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2baa8240-90c0-35f4-8465-b874f92b58b9
-2026-03-14T16:29:44.403+01:00  INFO 12116 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
-2026-03-14T16:29:44.437+01:00  INFO 12116 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-14T16:29:44.437+01:00  INFO 12116 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-03-14T16:29:44.641+01:00  INFO 12116 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2220 ms
-2026-03-14T16:29:45.821+01:00  INFO 12116 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
-2026-03-14T16:29:47.372+01:00  INFO 12116 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:29:48.732+01:00  INFO 12116 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:29:48.796+01:00  INFO 12116 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 22 endpoints beneath base path '/actuator'
-2026-03-14T16:29:48.935+01:00  INFO 12116 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
-2026-03-14T16:29:48.941+01:00  INFO 12116 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
-2026-03-14T16:29:48.953+01:00  INFO 12116 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
-2026-03-14T16:29:48.959+01:00  INFO 12116 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
-2026-03-14T16:29:48.972+01:00  INFO 12116 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-03-14T16:29:48.973+01:00  INFO 12116 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
-2026-03-14T16:29:48.974+01:00  INFO 12116 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-03-14T16:29:48.992+01:00  INFO 12116 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-03-14T16:29:48.994+01:00  INFO 12116 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-03-14T16:29:49.080+01:00  INFO 12116 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-03-14T16:29:49.100+01:00  INFO 12116 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.UKy1-oGmSjCu02P2tDjs5g, bound to: springCloudBus
-2026-03-14T16:29:49.108+01:00  INFO 12116 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-03-14T16:29:49.197+01:00  INFO 12116 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6e489bb8:0/SimpleConnection@522f74a1 [delegate=amqp://guest@127.0.0.1:5672/, localPort=60994]
-2026-03-14T16:29:50.111+01:00  INFO 12116 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1023063405.springCloudBusInput.errors' has 1 subscriber(s).
-2026-03-14T16:29:50.112+01:00  INFO 12116 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1023063405.springCloudBusInput.errors' has 2 subscriber(s).
-2026-03-14T16:29:50.161+01:00  INFO 12116 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.UKy1-oGmSjCu02P2tDjs5g'
-2026-03-14T16:29:50.194+01:00  INFO 12116 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
-2026-03-14T16:29:51.201+01:00  INFO 12116 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:29:52.211+01:00  INFO 12116 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-03-14T16:29:52.249+01:00  INFO 12116 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-1023063405.springCloudBusInput.errors
-2026-03-14T16:29:52.270+01:00  INFO 12116 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 11.915 seconds (process running for 13.584)
-2026-03-14T16:29:52.657+01:00  INFO 12116 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-14T16:29:52.657+01:00  INFO 12116 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-14T16:29:52.659+01:00  INFO 12116 --- [configserver] [RMI TCP Connection(3)-10.5.0.2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-15T16:24:26.327+01:00  INFO 12968 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 12968 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
+2026-03-15T16:24:26.337+01:00  INFO 12968 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-03-15T16:24:28.299+01:00  INFO 12968 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-03-15T16:24:28.325+01:00  INFO 12968 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-03-15T16:24:28.420+01:00  INFO 12968 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c000fe28-40a6-375a-9af9-72bba18a7e75
+2026-03-15T16:24:29.236+01:00  INFO 12968 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-03-15T16:24:29.264+01:00  INFO 12968 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-15T16:24:29.265+01:00  INFO 12968 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-15T16:24:29.618+01:00  INFO 12968 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3198 ms
+2026-03-15T16:24:31.049+01:00  INFO 12968 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
+2026-03-15T16:24:32.817+01:00  INFO 12968 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T16:24:34.506+01:00  INFO 12968 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T16:24:34.587+01:00  INFO 12968 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoints beneath base path '/actuator'
+2026-03-15T16:24:34.776+01:00  INFO 12968 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
+2026-03-15T16:24:34.787+01:00  INFO 12968 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
+2026-03-15T16:24:34.794+01:00  INFO 12968 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
+2026-03-15T16:24:34.800+01:00  INFO 12968 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
+2026-03-15T16:24:34.816+01:00  INFO 12968 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T16:24:34.817+01:00  INFO 12968 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
+2026-03-15T16:24:34.818+01:00  INFO 12968 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-03-15T16:24:34.840+01:00  INFO 12968 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2026-03-15T16:24:34.840+01:00  INFO 12968 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+2026-03-15T16:24:34.951+01:00  INFO 12968 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2026-03-15T16:24:34.973+01:00  INFO 12968 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.5RcsBWAMSzi4OZT30aQCug, bound to: springCloudBus
+2026-03-15T16:24:34.982+01:00  INFO 12968 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-03-15T16:24:35.108+01:00  INFO 12968 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5af641d3:0/SimpleConnection@38213efa [delegate=amqp://guest@127.0.0.1:5672/, localPort=57899]
+2026-03-15T16:24:35.243+01:00  INFO 12968 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1185851895.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T16:24:35.244+01:00  INFO 12968 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1185851895.springCloudBusInput.errors' has 2 subscriber(s).
+2026-03-15T16:24:35.277+01:00  INFO 12968 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.5RcsBWAMSzi4OZT30aQCug'
+2026-03-15T16:24:35.308+01:00  INFO 12968 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-03-15T16:24:35.543+01:00  INFO 12968 --- [configserver] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-15T16:24:35.545+01:00  INFO 12968 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-15T16:24:35.550+01:00  INFO 12968 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-03-15T16:24:36.316+01:00  INFO 12968 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T16:24:37.326+01:00  INFO 12968 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T16:24:37.372+01:00  INFO 12968 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-1185851895.springCloudBusInput.errors
+2026-03-15T16:24:37.392+01:00  INFO 12968 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 13.137 seconds (process running for 14.905)
+2026-03-15T16:31:23.226+01:00  INFO 12968 --- [configserver] [http-nio-8888-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-8904962356304957644\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-8904962356304957644/'
+2026-03-15T16:31:24.421+01:00  INFO 12968 --- [configserver] [http-nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-8904962356304957644\configdemo-dev.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-8904962356304957644/'
+2026-03-15T16:31:24.421+01:00  INFO 12968 --- [configserver] [http-nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-8904962356304957644\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-8904962356304957644/'
+2026-03-15T17:50:37.428+01:00  WARN 12968 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-8904962356304957644\.git\objects\pack\pack-77ebf607b41a0dee1bcb95b3b820f54203b097db.idx
+2026-03-15T17:50:37.514+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-15T17:50:37.538+01:00  INFO 12968 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-15T17:50:37.924+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2026-03-15T17:50:38.478+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2026-03-15T17:50:38.479+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.5RcsBWAMSzi4OZT30aQCug'
+2026-03-15T17:50:38.483+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1185851895.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T17:50:38.485+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1185851895.springCloudBusInput.errors' has 0 subscriber(s).
+2026-03-15T17:50:38.648+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T17:50:38.648+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
+2026-03-15T17:50:38.649+01:00  INFO 12968 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2026-03-15T17:51:47.502+01:00  INFO 22640 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 22640 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
+2026-03-15T17:51:47.505+01:00  INFO 22640 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-03-15T17:51:49.117+01:00  INFO 22640 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-03-15T17:51:49.127+01:00  INFO 22640 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-03-15T17:51:49.182+01:00  INFO 22640 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c000fe28-40a6-375a-9af9-72bba18a7e75
+2026-03-15T17:51:49.671+01:00  INFO 22640 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-03-15T17:51:49.690+01:00  INFO 22640 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-15T17:51:49.691+01:00  INFO 22640 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-15T17:51:49.878+01:00  INFO 22640 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2315 ms
+2026-03-15T17:51:51.078+01:00  INFO 22640 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
+2026-03-15T17:51:52.681+01:00  INFO 22640 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T17:51:54.085+01:00  INFO 22640 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T17:51:54.172+01:00  INFO 22640 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoints beneath base path '/actuator'
+2026-03-15T17:51:54.319+01:00  INFO 22640 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
+2026-03-15T17:51:54.327+01:00  INFO 22640 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
+2026-03-15T17:51:54.331+01:00  INFO 22640 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
+2026-03-15T17:51:54.335+01:00  INFO 22640 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
+2026-03-15T17:51:54.345+01:00  INFO 22640 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T17:51:54.346+01:00  INFO 22640 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
+2026-03-15T17:51:54.346+01:00  INFO 22640 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-03-15T17:51:54.359+01:00  INFO 22640 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2026-03-15T17:51:54.359+01:00  INFO 22640 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+2026-03-15T17:51:54.435+01:00  INFO 22640 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2026-03-15T17:51:54.455+01:00  INFO 22640 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous._hiIaXcjRH-RtzGXGVRMcQ, bound to: springCloudBus
+2026-03-15T17:51:54.462+01:00  INFO 22640 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-03-15T17:51:54.594+01:00  INFO 22640 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#54ef9698:0/SimpleConnection@601e7c97 [delegate=amqp://guest@127.0.0.1:5672/, localPort=53849]
+2026-03-15T17:51:54.686+01:00  INFO 22640 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-484728344.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T17:51:54.687+01:00  INFO 22640 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-484728344.springCloudBusInput.errors' has 2 subscriber(s).
+2026-03-15T17:51:54.714+01:00  INFO 22640 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous._hiIaXcjRH-RtzGXGVRMcQ'
+2026-03-15T17:51:54.740+01:00  INFO 22640 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-03-15T17:51:55.745+01:00  INFO 22640 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T17:51:56.275+01:00  INFO 22640 --- [configserver] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-15T17:51:56.275+01:00  INFO 22640 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-15T17:51:56.278+01:00  INFO 22640 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-15T17:51:56.750+01:00  INFO 22640 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T17:51:56.795+01:00  INFO 22640 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-484728344.springCloudBusInput.errors
+2026-03-15T17:51:56.814+01:00  INFO 22640 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 11.24 seconds (process running for 12.78)
+2026-03-15T17:52:13.846+01:00  INFO 22640 --- [configserver] [http-nio-8888-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-2313060703518861122\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-2313060703518861122/'
+2026-03-15T17:52:15.096+01:00  INFO 22640 --- [configserver] [http-nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-2313060703518861122\configdemo-dev.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-2313060703518861122/'
+2026-03-15T17:52:15.096+01:00  INFO 22640 --- [configserver] [http-nio-8888-exec-9] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-2313060703518861122\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-2313060703518861122/'
+2026-03-15T18:06:42.832+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-15T18:06:42.847+01:00  WARN 22640 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-2313060703518861122\.git\objects\pack\pack-77ebf607b41a0dee1bcb95b3b820f54203b097db.idx
+2026-03-15T18:06:42.858+01:00  INFO 22640 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-15T18:06:42.881+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2026-03-15T18:06:43.327+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2026-03-15T18:06:43.327+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous._hiIaXcjRH-RtzGXGVRMcQ'
+2026-03-15T18:06:43.328+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-484728344.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T18:06:43.330+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-484728344.springCloudBusInput.errors' has 0 subscriber(s).
+2026-03-15T18:06:43.371+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T18:06:43.371+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
+2026-03-15T18:06:43.372+01:00  INFO 22640 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2026-03-15T18:06:54.044+01:00  INFO 33944 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 33944 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
+2026-03-15T18:06:54.046+01:00  INFO 33944 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-03-15T18:06:55.717+01:00  INFO 33944 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-03-15T18:06:55.727+01:00  INFO 33944 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-03-15T18:06:55.782+01:00  INFO 33944 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c000fe28-40a6-375a-9af9-72bba18a7e75
+2026-03-15T18:06:56.234+01:00  INFO 33944 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-03-15T18:06:56.258+01:00  INFO 33944 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-15T18:06:56.258+01:00  INFO 33944 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-15T18:06:56.462+01:00  INFO 33944 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2354 ms
+2026-03-15T18:06:57.647+01:00  INFO 33944 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
+2026-03-15T18:06:59.267+01:00  INFO 33944 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T18:07:00.622+01:00  INFO 33944 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T18:07:00.693+01:00  INFO 33944 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoints beneath base path '/actuator'
+2026-03-15T18:07:00.817+01:00  INFO 33944 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
+2026-03-15T18:07:00.825+01:00  INFO 33944 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
+2026-03-15T18:07:00.828+01:00  INFO 33944 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
+2026-03-15T18:07:00.831+01:00  INFO 33944 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
+2026-03-15T18:07:00.843+01:00  INFO 33944 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T18:07:00.843+01:00  INFO 33944 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
+2026-03-15T18:07:00.843+01:00  INFO 33944 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-03-15T18:07:00.859+01:00  INFO 33944 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2026-03-15T18:07:00.859+01:00  INFO 33944 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+2026-03-15T18:07:00.955+01:00  INFO 33944 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2026-03-15T18:07:00.974+01:00  INFO 33944 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.K35Ouc6wQMKVE0F6gNDFeQ, bound to: springCloudBus
+2026-03-15T18:07:00.982+01:00  INFO 33944 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-03-15T18:07:01.076+01:00  INFO 33944 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#b5d7233:0/SimpleConnection@4bc39640 [delegate=amqp://guest@127.0.0.1:5672/, localPort=63974]
+2026-03-15T18:07:01.176+01:00  INFO 33944 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-2088857414.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T18:07:01.177+01:00  INFO 33944 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-2088857414.springCloudBusInput.errors' has 2 subscriber(s).
+2026-03-15T18:07:01.202+01:00  INFO 33944 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.K35Ouc6wQMKVE0F6gNDFeQ'
+2026-03-15T18:07:01.226+01:00  INFO 33944 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-03-15T18:07:02.168+01:00  INFO 33944 --- [configserver] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-15T18:07:02.168+01:00  INFO 33944 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-15T18:07:02.170+01:00  INFO 33944 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-15T18:07:02.232+01:00  INFO 33944 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T18:07:03.237+01:00  INFO 33944 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T18:07:03.271+01:00  INFO 33944 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-2088857414.springCloudBusInput.errors
+2026-03-15T18:07:03.289+01:00  INFO 33944 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 11.062 seconds (process running for 12.401)
+2026-03-15T18:07:13.285+01:00  INFO 33944 --- [configserver] [http-nio-8888-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-16197350752908362091\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-16197350752908362091/'
+2026-03-15T18:07:14.567+01:00  INFO 33944 --- [configserver] [http-nio-8888-exec-10] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-16197350752908362091\configdemo-dev.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-16197350752908362091/'
+2026-03-15T18:07:14.568+01:00  INFO 33944 --- [configserver] [http-nio-8888-exec-10] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-16197350752908362091\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-16197350752908362091/'
+2026-03-15T20:53:29.689+01:00  WARN 33944 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-16197350752908362091\.git\objects\pack\pack-ec222c0a214ccac7bd86a0d1b058ae3bfb3aec89.idx
+2026-03-15T20:53:29.700+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-15T20:53:29.732+01:00  INFO 33944 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-15T20:53:29.833+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2026-03-15T20:53:30.375+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2026-03-15T20:53:30.378+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.K35Ouc6wQMKVE0F6gNDFeQ'
+2026-03-15T20:53:30.396+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-2088857414.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T20:53:30.401+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-2088857414.springCloudBusInput.errors' has 0 subscriber(s).
+2026-03-15T20:53:30.464+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T20:53:30.465+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
+2026-03-15T20:53:30.466+01:00  INFO 33944 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2026-03-15T20:54:10.046+01:00  INFO 4764 --- [configserver] [main] c.d.c.ConfigserverApplication            : Starting ConfigserverApplication using Java 25.0.2 with PID 4764 (C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples\config-mgmt\configserver\target\classes started by leoga in C:\Users\leoga\Formación\Proyectos\Course 1\functionality examples)
+2026-03-15T20:54:10.050+01:00  INFO 4764 --- [configserver] [main] c.d.c.ConfigserverApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-03-15T20:54:12.432+01:00  INFO 4764 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-03-15T20:54:12.442+01:00  INFO 4764 --- [configserver] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-03-15T20:54:12.510+01:00  INFO 4764 --- [configserver] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c000fe28-40a6-375a-9af9-72bba18a7e75
+2026-03-15T20:54:13.057+01:00  INFO 4764 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-03-15T20:54:13.080+01:00  INFO 4764 --- [configserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-15T20:54:13.081+01:00  INFO 4764 --- [configserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-15T20:54:13.263+01:00  INFO 4764 --- [configserver] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3146 ms
+2026-03-15T20:54:14.543+01:00  INFO 4764 --- [configserver] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'configserver.springCloudBusInput' has 1 subscriber(s).
+2026-03-15T20:54:16.076+01:00  INFO 4764 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T20:54:17.451+01:00  INFO 4764 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T20:54:17.552+01:00  INFO 4764 --- [configserver] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoints beneath base path '/actuator'
+2026-03-15T20:54:17.766+01:00  INFO 4764 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
+2026-03-15T20:54:17.776+01:00  INFO 4764 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
+2026-03-15T20:54:17.782+01:00  INFO 4764 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
+2026-03-15T20:54:17.788+01:00  INFO 4764 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
+2026-03-15T20:54:17.801+01:00  INFO 4764 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T20:54:17.802+01:00  INFO 4764 --- [configserver] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 1 subscriber(s).
+2026-03-15T20:54:17.802+01:00  INFO 4764 --- [configserver] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-03-15T20:54:17.816+01:00  INFO 4764 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2026-03-15T20:54:17.816+01:00  INFO 4764 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+2026-03-15T20:54:17.899+01:00  INFO 4764 --- [configserver] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2026-03-15T20:54:17.913+01:00  INFO 4764 --- [configserver] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.P1wYN8H7Q4SPrTM1jwbVHw, bound to: springCloudBus
+2026-03-15T20:54:17.920+01:00  INFO 4764 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-03-15T20:54:18.686+01:00  INFO 4764 --- [configserver] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6bfdaed7:0/SimpleConnection@3a6409ec [delegate=amqp://guest@127.0.0.1:5672/, localPort=63389]
+2026-03-15T20:54:18.800+01:00  INFO 4764 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1550575634.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T20:54:18.801+01:00  INFO 4764 --- [configserver] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1550575634.springCloudBusInput.errors' has 2 subscriber(s).
+2026-03-15T20:54:18.828+01:00  INFO 4764 --- [configserver] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.P1wYN8H7Q4SPrTM1jwbVHw'
+2026-03-15T20:54:18.851+01:00  INFO 4764 --- [configserver] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-03-15T20:54:19.605+01:00  INFO 4764 --- [configserver] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-15T20:54:19.605+01:00  INFO 4764 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-15T20:54:19.608+01:00  INFO 4764 --- [configserver] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-15T20:54:19.857+01:00  INFO 4764 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T20:54:20.862+01:00  INFO 4764 --- [configserver] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-03-15T20:54:20.903+01:00  INFO 4764 --- [configserver] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-1550575634.springCloudBusInput.errors
+2026-03-15T20:54:20.931+01:00  INFO 4764 --- [configserver] [main] c.d.c.ConfigserverApplication            : Started ConfigserverApplication in 12.809 seconds (process running for 14.239)
+2026-03-15T20:54:33.341+01:00  INFO 4764 --- [configserver] [http-nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-10244708599333185864\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-10244708599333185864/'
+2026-03-15T20:54:34.739+01:00  INFO 4764 --- [configserver] [http-nio-8888-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-10244708599333185864\configdemo-dev.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-10244708599333185864/'
+2026-03-15T20:54:34.739+01:00  INFO 4764 --- [configserver] [http-nio-8888-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [C:\Users\leoga\AppData\Local\Temp\config-repo-10244708599333185864\configdemo.yml]' via location 'file:/C:/Users/leoga/AppData/Local/Temp/config-repo-10244708599333185864/'
+2026-03-15T23:21:42.727+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-15T23:21:42.741+01:00  WARN 4764 --- [configserver] [Thread-2] .c.s.e.MultipleJGitEnvironmentRepository : Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\leoga\AppData\Local\Temp\config-repo-10244708599333185864\.git\objects\pack\pack-8062ee7a060b906553c276658db5bce5554ccdd0.idx
+2026-03-15T23:21:42.756+01:00  INFO 4764 --- [configserver] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-15T23:21:42.789+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2026-03-15T23:21:43.064+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2026-03-15T23:21:43.066+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.P1wYN8H7Q4SPrTM1jwbVHw'
+2026-03-15T23:21:43.073+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1550575634.springCloudBusInput.errors' has 1 subscriber(s).
+2026-03-15T23:21:43.075+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'configserver.rabbit-1550575634.springCloudBusInput.errors' has 0 subscriber(s).
+2026-03-15T23:21:43.165+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-03-15T23:21:43.166+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'configserver.errorChannel' has 0 subscriber(s).
+2026-03-15T23:21:43.171+01:00  INFO 4764 --- [configserver] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
