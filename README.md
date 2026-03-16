@@ -25,3 +25,4 @@ Eureka service registry features has been added.
 - Log monitoring with Grafana, configured for the previous projects. ([Guide for setup Grafana with docker compose](https://grafana.com/docs/loki/latest/get-started/quick-start/quick-start/))
 ## Evaluate-prometheus
 - Log monitoring (Loki) and Prometheus for metrics observability for the previous projects ([Guide for setup Grafana with docker compose](https://grafana.com/docs/loki/latest/get-started/quick-start/quick-start/))
+- Configure Zipkin distributed tracing for the interservice projects.
