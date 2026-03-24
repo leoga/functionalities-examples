@@ -26,3 +26,14 @@ Eureka service registry features has been added.
 ## Evaluate-prometheus
 - Log monitoring (Loki) and Prometheus for metrics observability for the previous projects ([Guide for setup Grafana with docker compose](https://grafana.com/docs/loki/latest/get-started/quick-start/quick-start/))
 - Configure Zipkin distributed tracing for the interservice projects.
+
+## kafka
+Projects to test Kafka communication.
+- Using Kafka libraries
+- Using Spring cloud Stream
+
+You need to start Kafka with docker compose:
+```
+docker-compose up -d
+```
+
