@@ -37,3 +37,14 @@ You need to start Kafka with docker compose:
 docker-compose up -d
 ```
 
+## Security
+Projects to test security configurations
+- Authorization code flow
+- Client credentials flow
+- Authorization code flow with PKCE (with React frontend)
+
+You need to start keycloak with docker compose and configure the realm for tests there:
+```
+docker-compose up -d
+```
+

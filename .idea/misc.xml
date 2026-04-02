@@ -11,6 +11,11 @@
         <option value="$PROJECT_DIR$/interservice/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/kafkaconsumer/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/producer/pom.xml" />
+        <option value="$PROJECT_DIR$/Security/auth-code-flow/pom.xml" />
+        <option value="$PROJECT_DIR$/Security/client-credentials/pure-client/pom.xml" />
+        <option value="$PROJECT_DIR$/Security/client-credentials/resource/pom.xml" />
+        <option value="$PROJECT_DIR$/Security/client-credentials/client/pom.xml" />
+        <option value="$PROJECT_DIR$/Security/pcke-flow/pkce/pom.xml" />
       </list>
     </option>
   </component>
