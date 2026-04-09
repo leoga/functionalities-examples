@@ -47,4 +47,5 @@ You need to start keycloak with docker compose and configure the realm for tests
 ```
 docker-compose up -d
 ```
+A backup of the Keycloak realm is available in the `Keycloak-realm-backup` folder.
 
